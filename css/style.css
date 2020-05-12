@@ -1,0 +1,42 @@
+body {
+    background: #a2b9bc;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Claude_Monet%2C_The_Water-Liliy_Pond_%28National_Gallery%2C_London%29.JPG/1236px-Claude_Monet%2C_The_Water-Liliy_Pond_%28National_Gallery%2C_London%29.JPG");
+    background-size: auto 100vh;
+    font-family: tahoma;
+    height: 100vh;
+}
+
+.menu {
+    background-color: white;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* justify-content só funciona combinado com outra propriedade, como o display */
+
+.menu li {
+    list-style: none;
+}
+
+a {
+    color: teal;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.site-subtitle,
+.site-title {
+    color: whitesmoke;
+    text-align: center;
+}
+
+.site-subtitle {
+    font-style: italic;
+}
