@@ -1,13 +1,77 @@
+/* soft reset do css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background: #a2b9bc;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Claude_Monet%2C_The_Water-Liliy_Pond_%28National_Gallery%2C_London%29.JPG/1236px-Claude_Monet%2C_The_Water-Liliy_Pond_%28National_Gallery%2C_London%29.JPG");
+    background-image: url("../img/background.jpg");
     background-size: auto 100vh;
-    font-family: tahoma;
+    font-family: 'Jost', sans-serif;
     height: 100vh;
+    font-size: 10px;
+}
+
+
+/* se a tela tiver pelo menos 400px vai carregar estes estilos */
+
+@media (min-width: 400px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+
+/* breakpoint */
+
+@media (min-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+
+/* breakpoint */
+
+@media (min-width: 1200px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+header {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    transform: scale(0.5) translateY(50vh);
+    opacity: 0;
+    animation: 1s linear 2s animacaoNome forwards;
+}
+
+@keyframes animacaoNome {
+    0% {
+        transform: scale(0.5) translateY(50vh);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
 }
 
 .menu {
     background-color: white;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 1;
 }
 
 .menu ul {
@@ -20,6 +84,18 @@ body {
 
 .menu li {
     list-style: none;
+}
+
+.menu a {
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 1s, color 1s;
+}
+
+.menu a:hover {
+    background-color: teal;
+    color: white;
+    text-decoration: none;
 }
 
 a {
@@ -37,6 +113,94 @@ a:hover {
     text-align: center;
 }
 
+.site-title {
+    font-size: 4em;
+}
+
 .site-subtitle {
     font-style: italic;
+    line-height: 1.8em;
+}
+
+.contato,
+.portfolio {
+    padding: 2em;
+    min-height: 100vh;
+}
+
+.contato h2,
+.portfolio h2 {
+    color: rgb(231, 83, 34);
+    margin-bottom: 1em;
+    font-size: 2em;
+}
+
+.portfolio .grid {
+    display: grid;
+    gap: 2em;
+}
+
+@media (min-width: 560px) {
+    .portfolio .grid {
+        grid-template-columns: 240px 240px;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 880px) {
+    .portfolio .grid {
+        grid-template-columns: repeat(3, 260px);
+        justify-content: center;
+        align-content: center;
+        height: cal(100vh - 4em - 48px - 1.5em);
+    }
+}
+
+.portfolio figure {
+    text-align: center;
+}
+
+.img-portfolio {
+    height: 180px;
+    width: 240px;
+    object-fit: cover;
+    object-position: left bottom;
+    border-radius: 10px;
+    transition: transform 500ms;
+}
+
+.img-portfolio:hover {
+    transform: scale(1.05);
+}
+
+
+/* object-position pode ser em 10px também. Border radius pode ser em % também */
+
+
+/*  mexer no tamanho da imagem de acordo com o tamanho da tela
+@media (min-width: 1200px) {
+    .img-portfolio {
+        height: auto;
+        width: 100%;
+    }
+}
+*/
+
+.contato .icons {
+    text-align: center;
+}
+
+.contato a {
+    color: teal;
+    font-size: 4em;
+    transition: text-shadow 1s;
+}
+
+
+/* o active é para uso em celular pois o efeito aparece ao clicar */
+
+.contato a:active,
+.contato a:hover {
+    text-decoration: none;
+    text-shadow: 1px 1px 10px rgba(255, 255, 255, 1);
 }
